@@ -28,7 +28,7 @@ export const ProcessFlow = () => {
       <div className="wrap py-24 md:py-32">
         <SectionHead no="07" label="Process flow" title={['Nine steps.', 'One measured result.']} lede="From the moment artwork lands to the moment plates leave for the airport, every step is defined, measured and logged. Select a step to see what happens — and why it matters on your press." />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-20 no-print">
           <Reveal className="lg:col-span-5">
             <ol className="flex flex-col">
               {PROCESS.map((p, i) => (

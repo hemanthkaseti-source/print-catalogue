@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ArrowUpRight, Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
-import { CONSULTING, APPLICATIONS } from '../../lib/content';
+import { CONSULTING, APPLICATIONS, CONTACT } from '../../lib/content';
 import { Reveal } from '../motion/Reveal';
 import { SectionHead } from '../shared/SectionHead';
 import { submitEnquiry } from '../../lib/api';
@@ -42,6 +42,15 @@ export const Consultation = () => {
             ))}
           </div>
 
+          <div className="print-only lg:col-span-7 lg:pl-10 lg:hairline-l">
+            <div className="eyebrow mb-6">Start a conversation</div>
+            <div className="grid grid-cols-2 gap-8">
+              {[['Email your artwork', CONTACT.email], ['Call / WhatsApp', CONTACT.phone], ['Website', CONTACT.websiteLabel], ['Plant', 'Bengaluru, Karnataka, India']].map(([k, v]) => (
+                <div key={k} className="hairline-t pt-4"><div className="eyebrow mb-1">{k}</div><div className="font-display font-medium tracking-tight text-lg">{v}</div></div>
+              ))}
+            </div>
+            <p className="quote text-2xl mt-10">“Send us your press details, substrate and artwork. We reply within one working day with plate recommendations and a delivery schedule.”</p>
+          </div>
           <Reveal delay={0.15} className="lg:col-span-7 lg:pl-10 lg:hairline-l no-print">
             {done ? (
               <div className="min-h-[420px] flex flex-col justify-center gap-6" data-testid="enquiry-success">

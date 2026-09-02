@@ -130,18 +130,31 @@ input[type=range].range { -webkit-appearance: none; appearance: none; height: 1p
 input[type=range].range::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--acc); border: 3px solid var(--bg); cursor: ew-resize; }
 input[type=range].range::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: var(--acc); border: 3px solid var(--bg); cursor: ew-resize; }
 
-/* Print / PDF export */
-@page { size: A4; margin: 10mm; }
+/* Print / PDF export — landscape A4, full-bleed, one chapter per spread */
+@page { size: A4 landscape; margin: 0; }
 @media print {
-  html, body { background: #fff !important; }
+  html, body { background: var(--ink) !important; }
   html.lenis, html.lenis body { height: auto !important; overflow: visible !important; }
   .no-print { display: none !important; }
-  * { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
-  section { break-inside: avoid; page-break-inside: avoid; min-height: 0 !important; padding-top: 14mm !important; padding-bottom: 14mm !important; }
-  .print-break { break-before: page; }
+  * { animation: none !important; transition: none !important; opacity: 1 !important; }
+  :not(svg):not(svg *) { transform: none !important; }
+  .grain::after { display: none !important; }
   .theme-dark, .theme-light { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  img { max-height: 120mm; object-fit: cover; }
+  main > section, footer { break-before: page; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+  main > section.print-flow, footer.print-flow { break-before: auto; min-height: 0; }
+  main > section.print-short { min-height: 0; }
+  .print-hero { justify-content: flex-start; }
+  section[aria-label] { display: none !important; }
+  .print-hero { height: 100vh !important; min-height: 100vh !important; }
+  .print-hero > .wrap { min-height: 100vh !important; }
+  section > .wrap { padding-top: 56px !important; padding-bottom: 56px !important; }
+  .wrap > .grid > *, .wrap > div > .grid > *, img, blockquote, .h2, .lede { break-inside: avoid; }
+  .lg\:sticky { position: static !important; }
   .print-only { display: block !important; }
+  .print-only.grid { display: grid !important; }
+  section .mt-20 { margin-top: 40px !important; }
+  section .mt-16 { margin-top: 32px !important; }
+  section .mt-12 { margin-top: 24px !important; }
 }
 .print-only { display: none; }
 

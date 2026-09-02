@@ -41,7 +41,7 @@ export const ShineLED = () => (
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-20">
         <Reveal className="lg:col-span-7 relative overflow-hidden aspect-[16/9] spotlight">
-          <motion.img src={IMG.ledGlow} alt="Shine UV-LED exposure unit" className="absolute inset-0 w-full h-full object-cover" initial={{ scale: 1.15 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.8, ease: EASE }} />
+          <motion.img src={IMG.ledGlow} alt="Shine UV-LED exposure frame with plate under even violet light" className="absolute inset-0 w-full h-full object-cover" initial={{ scale: 1.15 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.8, ease: EASE }} />
         </Reveal>
         <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
           {POINTS.map(([t, d], i) => (

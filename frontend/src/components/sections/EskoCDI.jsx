@@ -18,7 +18,7 @@ const StepRepeat = () => (
 );
 
 const FEATURES = [
-  ['4000 dpi', 'Imaging resolution', 'Fine text, micro-type and smooth vignettes without banding.'],
+  ['10,000 dpi', 'Imaging resolution', 'Fine text, micro-type and smooth vignettes without banding.'],
   ['1:1', 'Repeat accuracy', 'Every reorder is imaged from the same locked file and curve — identical to the last run.'],
   ['Automated', 'Step-and-repeat & job tracking', 'The Esko Automation Engine builds layouts and tracks every job, removing manual steps that introduce error.'],
   ['-30%', 'Turnaround time', 'Fewer manual touches mean plates ship sooner and press schedules hold.'],

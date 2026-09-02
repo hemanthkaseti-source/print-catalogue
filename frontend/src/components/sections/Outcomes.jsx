@@ -5,7 +5,7 @@ import { Counter } from '../motion/Counter';
 import { Marquee } from '../shared/Marquee';
 
 export const RebrandBar = () => (
-  <section className="theme-light" data-testid="rebrand-section">
+  <section className="theme-light print-flow" data-testid="rebrand-section">
     <div className="wrap py-10 md:py-14">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         <Reveal className="md:col-span-6 flex items-center gap-4 flex-wrap">
@@ -33,7 +33,7 @@ export const RebrandBar = () => (
 );
 
 export const Outcomes = () => (
-  <section className="theme-dark" data-testid="outcomes-section">
+  <section className="theme-dark print-flow" data-testid="outcomes-section">
     <div className="wrap py-24 md:py-32">
       <Reveal className="flex items-center gap-4 mb-14">
         <span className="chapter-no">01</span><span className="h-px w-8" style={{ background: 'var(--line)' }} /><span className="eyebrow">Outcomes on your press</span>

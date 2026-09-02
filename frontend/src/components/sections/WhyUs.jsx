@@ -11,8 +11,8 @@ export const WhyUs = () => (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-20">
         <Reveal className="lg:col-span-5 relative overflow-hidden aspect-[4/5] lg:aspect-auto lg:min-h-[640px]">
           <motion.img
-            src={IMG.facility}
-            alt="Sree Bloomy Graphics prepress facility"
+            src={IMG.nxMacro}
+            alt="Flat-top dot structure on a photopolymer plate"
             className="absolute inset-0 w-full h-full object-cover"
             initial={{ scale: 1.15 }}
             whileInView={{ scale: 1 }}
@@ -20,8 +20,8 @@ export const WhyUs = () => (
             transition={{ duration: 1.8, ease: EASE }}
           />
           <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-ink/70 to-transparent text-bone">
-            <div className="eyebrow !text-bone/70">Facility · Bengaluru</div>
-            <div className="font-display font-medium tracking-tight mt-1">Imaging, exposure & finishing under one roof</div>
+            <div className="eyebrow !text-bone/70">Flat-top dot · 10,000 dpi imaging</div>
+            <div className="font-display font-medium tracking-tight mt-1">The dot structure behind predictable print</div>
           </div>
         </Reveal>
 

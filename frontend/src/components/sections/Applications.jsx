@@ -42,9 +42,9 @@ export const Applications = () => {
           </div>
         </div>
 
-        <div className="print-only mt-10 grid grid-cols-3 gap-6">
+        <div className="print-only grid mt-10 grid-cols-3 gap-6">
           {APPLICATIONS.map((a) => (
-            <div key={a.id}><img src={a.img} alt={a.title} className="w-full aspect-square object-cover" /><div className="font-display font-medium mt-2">{a.label}</div><p className="text-xs body">{a.text}</p></div>
+            <div key={a.id}><img src={a.img} alt={a.title} className="w-full aspect-[16/9] object-cover" /><div className="font-display font-medium mt-2">{a.label}</div><p className="text-xs body">{a.text}</p></div>
           ))}
         </div>
       </div>

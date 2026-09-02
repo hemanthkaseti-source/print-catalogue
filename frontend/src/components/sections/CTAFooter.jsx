@@ -8,7 +8,7 @@ import { downloadPdf } from '../../lib/api';
 const siteUrl = () => (typeof window !== 'undefined' ? window.location.origin : CONTACT.website);
 
 export const CTA = () => (
-  <section className="theme-light relative overflow-hidden" data-testid="cta-section">
+  <section className="theme-light relative overflow-hidden print-short" data-testid="cta-section">
     <div className="wrap py-28 md:py-40">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
         <div className="lg:col-span-8">
@@ -32,7 +32,7 @@ export const CTA = () => (
 );
 
 export const Footer = () => (
-  <footer className="theme-dark" data-testid="footer">
+  <footer className="theme-dark print-flow" data-testid="footer">
     <div className="wrap pt-20 pb-10">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
         <Reveal className="md:col-span-4">

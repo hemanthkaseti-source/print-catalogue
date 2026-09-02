@@ -1,4 +1,5 @@
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import FastAPI, APIRouter, HTTPException, Request
+from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -12,6 +13,8 @@ from datetime import datetime, timezone
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
+
+from pdf_service import render_catalogue_pdf  # noqa: E402
 
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
@@ -105,6 +108,24 @@ async def analytics_summary():
     rows = await db.events.aggregate(pipeline).to_list(100)
     enquiries = await db.enquiries.count_documents({})
     return {"events": {r["_id"]: r["count"] for r in rows}, "enquiries": enquiries}
+
+
+@api_router.get("/catalogue.pdf")
+async def catalogue_pdf(request: Request, refresh: int = 0):
+    base = os.environ.get("FRONTEND_URL") or request.headers.get("origin")
+    if not base:
+        raise HTTPException(status_code=500, detail="FRONTEND_URL not configured")
+    try:
+        path = await render_catalogue_pdf(base.rstrip("/"), force=bool(refresh))
+    except Exception as exc:
+        logger.exception("PDF render failed")
+        raise HTTPException(status_code=502, detail=f"PDF generation failed: {exc}")
+    return FileResponse(
+        path,
+        media_type="application/pdf",
+        filename="Sree-Bloomy-Graphics-Catalogue.pdf",
+        headers={"Cache-Control": "no-store"},
+    )
 
 
 app.include_router(api_router)

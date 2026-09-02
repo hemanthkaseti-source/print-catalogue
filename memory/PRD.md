@@ -22,6 +22,11 @@ Swiss-inspired, scroll-driven B2B company profile for a flexographic prepress ho
 - Enquiry form → MongoDB with sonner toasts; PDF download tracked as analytics event then `window.print()` with print CSS
 - QR codes (site URL on CTA, mailto on footer)
 
+## Implemented (iteration 2)
+- One-click PDF: `GET /api/catalogue.pdf` renders the live site with headless Chrome (Playwright, CHROME_PATH env) in A4 landscape, one chapter per page, cached 6h at /tmp (`?refresh=1` forces regeneration). Frontend fetches blob → saves `Sree-Bloomy-Graphics-Catalogue.pdf` with progress toast.
+- Imagery: replaced copper-looking plate with amber photopolymer NX plate; new Shine LED flatbed exposure image; removed building/facility photos per user; Esko resolution set to 10,000 dpi.
+- Pending from user: machine photos + leadership portraits (K. C. Mohan, K. Anandhi) to be attached and swapped into content.js IMG map.
+
 ## Backlog
 - P1: Real photography/logos swap; real client logos in trust bar; LinkedIn/Instagram URLs
 - P1: Server-side PDF generation (Playwright/WeasyPrint) for a downloadable file instead of browser print dialog

@@ -26,7 +26,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="top" ref={ref} onPointerMove={onMove} className="theme-dark relative min-h-[100svh] overflow-hidden grain" data-testid="hero-section" style={{ perspective: 1200 }}>
+    <section id="top" ref={ref} onPointerMove={onMove} className="theme-dark relative min-h-[100svh] overflow-hidden grain print-hero" data-testid="hero-section" style={{ perspective: 1200 }}>
       <motion.div className="absolute inset-0" style={{ y: imgY, scale: imgScale, rotateX: rx, rotateY: ry }}>
         <motion.img
           src={IMG.heroMacro}

@@ -1,14 +1,15 @@
 export const IMG = {
   heroMacro: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/5ce2037b7124d50f98ed0aee7bde0f83bcc7b89310d500fbb033d03a8fd2895b.jpeg',
-  plateCylinder: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/2c4eb3c01d70e561bf06888209e3a097c1b0de925e520b3a346c9a4ec1d37bbf.jpeg',
+  plateCylinder: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/35f4798bb6f9e6b8207586a0b1d9867b78b43f7df8e539ec397a2113ba26ee66.jpeg',
+  nxMacro: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/d498a210a7fc1d6f24d4848ac4205fd8ae00cabe5ae85abadc453d94459710a4.jpeg',
+  ledBars: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/a1eb813d56d020f8fd51ff20c2c7d3579c9c4fb42134787b04be18d4c07d66c5.jpeg',
   laserCdi: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/cd662e4b7df7744cf00f4bb93bcfccf419a001c47fd9773fa62fdf3a2a7e41e4.jpeg',
-  ledGlow: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/b9ed1e644dffc94704326995fe6746ebef00651c1a0a8b4e742eb10fab25bc77.jpeg',
+  ledGlow: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/058b059e49b830c634248190536e58d9bfe7d1e00f80e7e70618fe20f4e2f1d4.jpeg',
   colorSwatches: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/11a26ff5932b4c099c80d2280c8fcbda3aa3efb66f884932900bc018b2cd6be8.jpeg',
   pouch: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/a1789ea0a31d064e004d15940bbe28c6df9327bbb9a5077a17856f44a92e427e.jpeg',
   labels: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/429b9e6093d3ea6dd8b4fc90a2085be0a322a103bfd6866b799c630c54ba2dc8.jpeg',
   corrugated: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/901730982831f95bf9d6e44356c3398ea97d00d8917adc1a7e5ec3bf62b57f27.jpeg',
   paperBag: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/a419c3f171ee8add40042387f090b26c050f4ad7b5c08a8ac5f8f7e2b360811b.jpeg',
-  facility: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/a954891b01c5b871bd2445e336aeb92d04e53d39117bfb867c5fcba79d3a5690.jpeg',
   chairman: 'https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200',
   director: 'https://images.unsplash.com/photo-1758518730784-134ce04ab48e?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200',
 };
@@ -68,7 +69,7 @@ export const APPLICATIONS = [
   { id: 'labels', label: 'Labels', img: IMG.labels, title: 'Pressure-sensitive & shrink labels', text: 'Fine text, micro-type and vignette-to-zero fades hold cleanly on narrow-web presses thanks to flat-top screening.', specs: ['Narrow-web', 'Micro-type', 'Vignettes to zero'] },
   { id: 'corrugated', label: 'Corrugated', img: IMG.corrugated, title: 'Post-print & pre-print corrugated', text: 'Soft-substrate plates engineered to reduce washboarding and fluting show-through while keeping brand colour on target.', specs: ['Post-print', 'Pre-print liner', 'Low washboard'] },
   { id: 'paper', label: 'Paper bags', img: IMG.paperBag, title: 'Carrier bags & sacks', text: 'Plates that stay crisp on absorbent kraft and coated papers, with consistent solids on long, high-speed bag runs.', specs: ['Kraft & coated', 'Long runs', 'Tight registration'] },
-  { id: 'lineomatic', label: 'Line-o-matic', img: IMG.facility, title: 'Ruling & stationery', text: 'Precision ruling plates for notebook and stationery lines — even line weight across the full web at production speed.', specs: ['Even line weight', 'Full-web', 'Production speed'] },
+  { id: 'lineomatic', label: 'Line-o-matic', img: IMG.colorSwatches, title: 'Ruling & stationery', text: 'Precision ruling plates for notebook and stationery lines — even line weight across the full web at production speed.', specs: ['Even line weight', 'Full-web', 'Production speed'] },
   { id: 'dryoffset', label: 'Dry-offset', img: IMG.plateCylinder, title: 'Cups, tubes & containers', text: 'Dry-offset plates for curved and rigid surfaces with clean trapping across multi-colour, single-pass decoration.', specs: ['Curved surfaces', 'Single pass', 'Multi-colour trap'] },
 ];
 

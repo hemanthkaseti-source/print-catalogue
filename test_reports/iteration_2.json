@@ -1,0 +1,25 @@
+{
+  "summary": "Iteration 2 full pass. Backend: 10/10 pytest cases green including new PDF endpoint. GET /api/catalogue.pdf?refresh=1 returned 200, Content-Type application/pdf, Content-Disposition attachment with filename Sree-Bloomy-Graphics-Catalogue.pdf, body starts with %PDF and was ~2.6MB (>1MB). First (refresh) render ~17s; cached second call ~0.2s (well under 3s). Enquiries + analytics regression still green. Frontend: hero-download-pdf-button, nav-download-pdf-button, and CTA download-pdf-button all triggered a real browser download with the correct filename (verified via Playwright expect_download). Sonner toast 'Catalogue downloaded.' visible after successful generation ('Preparing your A4 catalogue PDF…' shown during job). Content assertions: esko-feature-1 shows '10,000 dpi'; WhyUs caption reads 'Flat-top dot · 10,000 dpi imaging'; Flexcel image alt contains 'Kodak Flexcel NX photopolymer plate'; Shine LED image alt contains 'Shine UV-LED exposure frame'; the removed facility photo hash 'a954891...5690' is not referenced anywhere in the DOM. Regression: process-step-3 sets process-detail-title to 'Digital proofing'; application-tab-lineomatic sets application-title to 'Ruling & stationery'. Zero console errors and zero page errors during full load + interactions.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {"ui_bugs": [], "integration_issues": [], "design_issues": []},
+  "test_report_links": [
+    "/app/backend/tests/backend_test.py",
+    "/app/backend/tests/test_pdf.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "pdf_service.render_catalogue_pdf holds a global asyncio.Lock across the whole render (~17s). Concurrent /api/catalogue.pdf requests will serialise; behind Kubernetes ingress with a 60s timeout, a burst of >3 cold requests could time out later callers. Consider returning the cached file immediately when present and only serialising the regeneration path, or returning 202/503 when regeneration is already in progress.",
+    "server.py exception handler for the PDF route logs via `logger` which is defined AFTER the route (logger is assigned at line 142, but catalogue_pdf references it at line 121). It works at runtime because the reference is evaluated lazily, but it's fragile — move logging.basicConfig / logger definition above the routes.",
+    "downloadPdf() uses a module-level `downloading` flag so a second click during generation is silently no-op'd — good UX safeguard, but consider disabling the buttons visually while a download is pending to avoid the appearance of a broken click.",
+    "backend_test.py uses `pytest.enquiry_id` as cross-test state; fine with LoadScopeScheduling but brittle if parallelisation strategy changes. Consider a class-scoped fixture."
+  ],
+  "updated_files": ["/app/backend/tests/test_pdf.py"],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "test_credentials": "None — no auth required",
+  "seed_data_creation": "Created 1 TEST enquiry (qa2@example.com) + several pdf_download analytics events during download tests.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "PDF cache at /tmp/sbg-catalogue.pdf with TTL 6h. Playwright chromium at /usr/bin/google-chrome via CHROME_PATH. Only call ?refresh=1 sparingly (~17s + global lock). Enquiry form testids are enquiry-name-input, enquiry-company-input, enquiry-email-input, enquiry-message-input, enquiry-submit-button (NOT enquiry-name/enquiry-submit — grep Consultation.jsx). Use page.expect_download with 90s timeout for PDF buttons.",
+  "rca of the issue": "N/A — no defects found in this iteration."
+}

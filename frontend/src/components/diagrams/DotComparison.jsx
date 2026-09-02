@@ -60,7 +60,7 @@ export const DotComparison = () => {
           </div>
         ))}
       </div>
-      <div className="mt-8 hairline-t pt-6">
+      <div className="mt-8 hairline-t pt-6 no-print">
         <div className="flex items-center justify-between eyebrow mb-4">
           <span>Impression pressure</span>
           <span className="text-acc">{Math.round(pressure * 100)}%</span>
