@@ -1,0 +1,29 @@
+# Sree Bloomy Graphics Pvt. Ltd. — Interactive Web Catalogue
+
+## Original problem statement
+Swiss-inspired, scroll-driven B2B company profile for a flexographic prepress house (Bengaluru, India) positioned alongside Esko/Kodak/Miraclon/DuPont brand experiences. 17 sections: hero, rebrand bar, outcomes, why-us, Kodak Flexcel NX, Esko CDI, Shine LED, colour management, 9-step process, applications, comparison graphics, exports map (UG, TZ, ZM, LK, RW, CD), consultation, leadership, trust bar, CTA with QR, footer. Must be shareable via URL and exportable as PDF to send to clients.
+
+## User choices (June 2026)
+- Enquiry: user wants a **PDF to send to clients** → Download-PDF button (print stylesheet) + enquiry form stored in MongoDB
+- Contact: Raghavendra Enclave, NICE Ring Rd, Madanayakanahalli, Bengaluru 560073 · +91 99459 42389 · bloomygraphics@gmail.com · https://sreebloomygrahics.org/
+- Markets: only the 6 listed. No ISO section. Imagery: AI-generated + stock placeholders. Social links: placeholders (#), WhatsApp → phone.
+
+## Architecture
+- Frontend: React (CRA/craco, JSX), Tailwind, Framer Motion, Lenis smooth scroll, d3-geo + topojson-client (SVG map from `/public/world-110m.json`), qrcode.react
+- Backend: FastAPI — `POST/GET /api/enquiries`, `GET /api/enquiries/{id}`, `POST /api/analytics/events`, `GET /api/analytics/summary`
+- DB: MongoDB collections `enquiries`, `events`
+- Fonts: Inter Tight (display), Inter (body), Instrument Serif (pull quotes), JetBrains Mono (telemetry)
+
+## Implemented (Sep 2026, v1)
+- All 17 sections, dark/light alternation, numbered chapters 01–14
+- Kinetic hero: masked line reveal, parallax + pointer 3D tilt, grain
+- Interactive: NX dot-comparison slider, ink-savings calculator, before/after slider, 9-step process stepper, application tabs, export map hover sync
+- Editorial marquees (rebrand bar, trust bar), custom cursor, scroll progress, hide-on-scroll nav, mobile menu
+- Enquiry form → MongoDB with sonner toasts; PDF download tracked as analytics event then `window.print()` with print CSS
+- QR codes (site URL on CTA, mailto on footer)
+
+## Backlog
+- P1: Real photography/logos swap; real client logos in trust bar; LinkedIn/Instagram URLs
+- P1: Server-side PDF generation (Playwright/WeasyPrint) for a downloadable file instead of browser print dialog
+- P2: Email notification on enquiry (Resend); admin view for enquiries
+- P2: Multilingual (FR for Congo/Rwanda), ISO/sustainability section if certifications exist

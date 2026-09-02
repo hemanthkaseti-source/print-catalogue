@@ -1,0 +1,186 @@
+{
+  "project_name": "Sree Bloomy Graphics Pvt. Ltd. — Premium Interactive Web Catalogue",
+  "app_type": "marketing_site",
+  "design_direction": "Swiss-Inspired Technical Catalogue with Alternating Bone White and Dark Charcoal (#0E0E10) Full-Bleed Sections",
+  "typography": {
+    "heading_font": "Neue Haas Grotesk / Inter (Sans Display, bold, tight tracking)",
+    "body_font": "Inter / System Sans (Clean, high legibility)",
+    "editorial_serif": "Cormorant Garamond / Playfair Display (Italic serif for pull quotes and chairman philosophy)",
+    "mono_font": "JetBrains Mono (Technical telemetry, specs, dot gain metrics, coordinates)",
+    "scale": {
+      "hero_h1": "text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-none",
+      "section_h2": "text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight",
+      "card_h3": "text-lg sm:text-xl font-semibold tracking-tight",
+      "body_text": "text-sm sm:text-base leading-relaxed text-slate-600 dark:text-zinc-400",
+      "mono_label": "text-xs font-mono uppercase tracking-widest text-zinc-500"
+    }
+  },
+  "colors": {
+    "light_bg": "#F9F8F5",
+    "light_surface": "#FFFFFF",
+    "dark_bg": "#0E0E10",
+    "dark_surface": "#16161A",
+    "text_primary_light": "#0E0E10",
+    "text_secondary_light": "#55555C",
+    "text_primary_dark": "#F9F8F5",
+    "text_secondary_dark": "#9A9A9E",
+    "brand_accent": "#00E5FF",
+    "brand_accent_hover": "#00B2CC",
+    "danger_red": "#FF3333",
+    "border_light": "rgba(0, 0, 0, 0.08)",
+    "border_dark": "rgba(255, 255, 255, 0.12)"
+  },
+  "layout_and_grid": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "swiss_grid": "grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12",
+    "section_padding": "py-24 sm:py-32",
+    "alternating_sections": "Section 1 (Hero - Dark) -> Section 2 (Rebrand - Light) -> Section 3 (Outcomes - Dark) -> Section 4 (Why Sree Bloomy - Light) -> Section 5 (Kodak NX - Dark) -> Section 6 (Esko CDI - Light) -> Section 7 (Shine LED - Dark) -> Section 8 (Color Mgmt - Light) -> Section 9 (Process - Dark) -> Section 10 (Applications - Light) -> Section 11 (Comparison - Dark) -> Section 12 (Export Map - Light) -> Section 13 (Consultation - Dark) -> Section 14 (Leadership - Light) -> Section 15 (Trust Bar - Dark) -> Section 16 (CTA QR - Light) -> Section 17 (Footer - Dark)"
+  },
+  "sections_breakdown": [
+    {
+      "id": "hero",
+      "name": "1. Cinematic Kinetic Hero",
+      "theme": "dark",
+      "components": ["Kinetic Hero text with masked reveal", "3D Interactive Photopolymer Cylinder / Macro Plate simulation canvas", "Telemetry overlay"],
+      "copy": "Precision Prepress. Predictable Print."
+    },
+    {
+      "id": "rebrand",
+      "name": "2. Company Rebrand & Legacy Bar",
+      "theme": "light",
+      "components": ["Established 2015 milestone", "Global footprint badge", "Brand transition indicator"]
+    },
+    {
+      "id": "outcomes",
+      "name": "3. Outcomes Metric Strip",
+      "theme": "dark",
+      "components": ["4 Counter Cards: Dot Retention, Ink Reduction %, Make-ready Time, Export Countries"],
+      "counters": ["0.4% Min Dot", "25% Ink Saved", "-40% Press Setup", "6 Nations Exported"]
+    },
+    {
+      "id": "why_us",
+      "name": "4. Why Sree Bloomy (Value Cards)",
+      "theme": "light",
+      "components": ["Swiss 4-column Bento grid", "Precision Engineering", "100% Quality Guarantee", "Zero-Defect Workflow"]
+    },
+    {
+      "id": "kodak_nx",
+      "name": "5. Kodak Flexcel NX Technology Focus",
+      "theme": "dark",
+      "components": ["Interactive Flat-Top Dot Slider (Conventional Round Dot vs NX Flat Top Dot)", "DIGICAP NX Pattern simulation"]
+    },
+    {
+      "id": "esko_cdi",
+      "name": "6. Esko CDI & Automation Engine",
+      "theme": "light",
+      "components": ["Esko Auto-nesting visualizer", "Pixel+ Optics display", "HD Flexo resolution metric"]
+    },
+    {
+      "id": "shine_led",
+      "name": "7. Shine LED UV Exposure",
+      "theme": "dark",
+      "components": ["UV-A & UV-C double-sided exposure simulation", "Thermal stability indicator"]
+    },
+    {
+      "id": "color_mgmt",
+      "name": "8. Advanced Prepress & Color Management",
+      "theme": "light",
+      "components": ["X-Rite Spectrophotometer simulation", "G7 Master Pass certification interactive swatch viewer"]
+    },
+    {
+      "id": "process_flow",
+      "name": "9. Interactive 9-Step Process Flow",
+      "theme": "dark",
+      "components": ["Step-by-step interactive stepper: File Preflight -> Trapping -> Color Separation -> Screening -> Laser Imaging -> Main Exposure -> Washout -> Drying -> QC Inspection"],
+      "interactive": "Clickable steps updating detailed SVG CAD preview"
+    },
+    {
+      "id": "applications",
+      "name": "10. Applications Gallery",
+      "theme": "light",
+      "components": ["6 Tabs: Flexible Packaging, Premium Labels, Corrugated Box, Paper Bags, Line-O-Matic, Dry-Offset"],
+      "grid": "Image gallery with macro detail overlay"
+    },
+    {
+      "id": "comparison",
+      "name": "11. Technical Comparison Graphics",
+      "theme": "dark",
+      "components": ["Dot Gain Curves Chart (Recharts/SVG)", "Anox Density vs Plate Transfer", "Ink Savings Calculator interactive toggle"]
+    },
+    {
+      "id": "global_exports",
+      "name": "12. Global Exports Interactive Map",
+      "theme": "light",
+      "components": ["Interactive SVG World Map featuring pins and trade lines for: Uganda, Tanzania, Zambia, Sri Lanka, Rwanda, Democratic Republic of Congo"],
+      "features": ["Hover popover with export statistics per country"]
+    },
+    {
+      "id": "consultation",
+      "name": "13. Technical Consultation Form",
+      "theme": "dark",
+      "components": ["Sub-surface Form sending to FastAPI /api/enquiry endpoint", "Plate thickness selector, cylinder circumference, substrate type selector"]
+    },
+    {
+      "id": "leadership",
+      "name": "14. Leadership & Philosophy",
+      "theme": "light",
+      "components": ["K. C. Mohan (Chairman) & K. Anandhi (Director) profile cards", "Editorial Serif Pull Quotes"]
+    },
+    {
+      "id": "client_trust",
+      "name": "15. Client Trust Bar",
+      "theme": "dark",
+      "components": ["Editorial Marquee scrolling converting press partners", "FMCG Brand Trust Badges"]
+    },
+    {
+      "id": "cta_qr",
+      "name": "16. Digital Catalogue CTA & QR Code",
+      "theme": "light",
+      "components": ["Shareable link generator", "Live SVG QR Code generator to current URL", "Download PDF Button with print stylesheet trigger"]
+    },
+    {
+      "id": "footer",
+      "name": "17. Technical Footer & Logistics Note",
+      "theme": "dark",
+      "components": ["DHL Express & Atlas Logistics export compliance notice", "Plant address (India)", "ISO 9001:2015 Prepress Certification stamp"]
+    }
+  ],
+  "motion_and_interactions": {
+    "lenis_smooth_scroll": "Enabled globally for fluid momentum",
+    "framer_motion_reveals": "Staggered fade-up for section headings, border line animations",
+    "parallax_hero": "Layered cylinder depth effect on scroll",
+    "cursor_hover": "Custom subtle circle hover state for interactive diagrams"
+  },
+  "print_and_pdf": {
+    "print_css": "@media print { body { background: white !important; color: black !important; } .no-print { display: none !important; } .page-break { page-break-after: always; } }",
+    "download_pdf_button": "Triggers window.print() with custom print styling for clear multi-page B2B PDF catalogue output"
+  },
+  "image_urls": {
+    "hero_macro_plate": "https://images.unsplash.com/photo-1693031630146-568e2f72db0e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwxfHxmbGV4b2dyYXBoaWMlMjBwcmludGluZyUyMHBhY2thZ2luZyUyMHByZXByZXNzJTIwcGxhdGVzJTIwbWFjcm8lMjBwaG90b3BvbHltZXIlMjBjeWxpbmRlcnxlbnwwfHx8fDE3ODgzNTkxOTd8MA&ixlib=rb-4.1.0&q=85",
+    "flexo_roller": "https://images.unsplash.com/photo-1574114037110-49a06a20303d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwzfHxmbGV4b2dyYXBoaWMlMjBwcmludGluZyUyMHBhY2thZ2luZyUyMHByZXByZXNzJTIwcGxhdGVzJTIwbWFjcm8lMjBwaG90b3BvbHltZXIlMjBjeWxpbmRlcnxlbnwwfHx8fDE3ODgzNTkxOTd8MA&ixlib=rb-4.1.0&q=85",
+    "prepress_machine": "https://images.unsplash.com/photo-1513331006937-db9db75ac1a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODR8MHwxfHNlYXJjaHwyfHxmbGV4b2dyYXBoaWMlMjBwcmludGluZyUyMHBhY2thZ2luZyUyMHByZXByZXNzJTIwcGxhdGVzJTIwbWFjcm8lMjBwaG90b3BvbHltZXIlMjBjeWxpbmRlcnxlbnwwfHx8fDE3ODgzNTkxOTd8MA&ixlib=rb-4.1.0&q=85",
+    "chairman_kc_mohan": "https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBidXNpbmVzcyUyMGV4ZWN1dGl2ZSUyMGNoYWlybWFuJTIwZGlyZWN0b3IlMjBwb3J0cmFpdCUyMHByb2Zlc3Npb25hbCUyMHBob3RvfGVufDB8fHx8MTc4ODM1OTE5N3ww&ixlib=rb-4.1.0&q=85",
+    "director_k_anandhi": "https://images.unsplash.com/photo-1758518730784-134ce04ab48e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBidXNpbmVzcyUyMGV4ZWN1dGl2ZSUyMGNoYWlybWFuJTIwZGlyZWN0b3IlMjBwb3J0cmFpdCUyMHByb2Zlc3Npb25hbCUyMHBob3RvfGVufDB8fHx8MTc4ODM1OTE5N3ww&ixlib=rb-4.1.0&q=85",
+    "app_pouch": "https://images.unsplash.com/photo-1615485737646-a0363aba01ec?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHw0fHxmbGV4aWJsZSUyMHBhY2thZ2luZyUyMHBvdWNoJTIwbGFiZWxzJTIwY29ycnVnYXRlZCUyMGJveCUyMG1vY2t1cCUyMHByb2R1Y3QlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc4ODM1OTE5N3ww&ixlib=rb-4.1.0&q=85",
+    "app_boxes": "https://images.unsplash.com/photo-1633174524827-db00a6b7bc74?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwzfHxmbGV4aWJsZSUyMHBhY2thZ2luZyUyMHBvdWNoJTIwbGFiZWxzJTIwY29ycnVnYXRlZCUyMGJveCUyMG1vY2t1cCUyMHByb2R1Y3QlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc4ODM1OTE5N3ww&ixlib=rb-4.1.0&q=85",
+    "app_paper_bag": "https://images.unsplash.com/photo-1695245503558-5cdb37f49092?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwyfHxmbGV4aWJsZSUyMHBhY2thZ2luZyUyMHBvdWNoJTIwbGFiZWxzJTIwY29ycnVnYXRlZCUyMGJveCUyMG1vY2t1cCUyMHByb2R1Y3QlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc4ODM1OTE5N3ww&ixlib=rb-4.1.0&q=85"
+  },
+  "testing_and_data_ids": {
+    "rule": "All interactive buttons, links, inputs, selectors, tab elements, and printable triggers MUST contain explicit role-based data-testid attributes",
+    "examples": {
+      "download_pdf": "data-testid=\"download-pdf-button\"",
+      "consultation_submit": "data-testid=\"consultation-form-submit-button\"",
+      "process_step_item": "data-testid=\"process-step-{step_number}\"",
+      "nx_dot_toggle": "data-testid=\"nx-dot-comparison-toggle\"",
+      "export_country_pin": "data-testid=\"export-country-pin-{country_code}\""
+    }
+  },
+  "instructions_to_main_agent": [
+    "Build the 17 specified sections in a seamless, scroll-driven React architecture with chapter index sticky header.",
+    "Ensure strict Swiss grid alignment, hairline borders, and dramatic light-dark alternating full-bleed sections.",
+    "Integrate Lenis smooth scrolling and Framer Motion reveals.",
+    "Include interactive technical diagrams: Dot Gain Curve comparison, Conventional vs NX Dot toggle slider, Ink savings calculator, 9-Step interactive process stepper, and interactive SVG World Export Map.",
+    "Connect the Technical Consultation Form to the FastAPI /api/enquiry endpoint with MongoDB storage.",
+    "Implement print-friendly CSS and the Download PDF button for instant client PDF export."
+  ]
+}
