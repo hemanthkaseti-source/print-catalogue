@@ -10,8 +10,8 @@ export const IMG = {
   labels: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/429b9e6093d3ea6dd8b4fc90a2085be0a322a103bfd6866b799c630c54ba2dc8.jpeg',
   corrugated: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/901730982831f95bf9d6e44356c3398ea97d00d8917adc1a7e5ec3bf62b57f27.jpeg',
   paperBag: 'https://static.prod-images.emergentagent.com/jobs/8f23eb07-7dff-4d40-a6e8-c18da9d46991/images/a419c3f171ee8add40042387f090b26c050f4ad7b5c08a8ac5f8f7e2b360811b.jpeg',
-  chairman: 'https://images.unsplash.com/photo-1737574821698-862e77f044c1?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200',
-  director: 'https://images.unsplash.com/photo-1758518730784-134ce04ab48e?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200',
+  chairman: '/leaders/kc-mohan.jpg',
+  director: '/leaders/k-anandhi.jpg',
 };
 
 export const CONTACT = {
@@ -28,6 +28,13 @@ export const CONTACT = {
   coords: '12.97° N · 77.49° E',
   shipping: 'International dispatch via DHL Express & Atlas Logistics. Plates are packed flat, light-sealed and tracked door-to-door.',
 };
+
+export const CHAPTERS = [
+  ['01', 'Outcomes on your press', 4], ['02', 'Why Sree Bloomy', 5], ['03', 'Kodak Flexcel NX', 6], ['04', 'Esko CDI + Automation Engine', 7],
+  ['05', 'Shine LED exposure', 8], ['06', 'Advanced prepress & colour', 9], ['07', 'Process flow', 10], ['08', 'Applications', 11],
+  ['09', 'Comparison', 12], ['10', 'Global exports', 13], ['11', 'Technical consultation', 14], ['12', 'Leadership', 15],
+  ['13', 'Trusted by', 16], ['14', 'Start a job & contact', 17],
+];
 
 export const NAV = [
   { id: 'technology', label: 'Technology' },

@@ -144,6 +144,7 @@ input[type=range].range::-moz-range-thumb { width: 18px; height: 18px; border-ra
   main > section.print-flow, footer.print-flow { break-before: auto; min-height: 0; }
   main > section.print-short { min-height: 0; }
   .print-hero { justify-content: flex-start; }
+  main > section:first-child { break-before: auto; }
   section[aria-label] { display: none !important; }
   .print-hero { height: 100vh !important; min-height: 100vh !important; }
   .print-hero > .wrap { min-height: 100vh !important; }

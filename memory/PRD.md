@@ -27,6 +27,10 @@ Swiss-inspired, scroll-driven B2B company profile for a flexographic prepress ho
 - Imagery: replaced copper-looking plate with amber photopolymer NX plate; new Shine LED flatbed exposure image; removed building/facility photos per user; Esko resolution set to 10,000 dpi.
 - Pending from user: machine photos + leadership portraits (K. C. Mohan, K. Anandhi) to be attached and swapped into content.js IMG map.
 
+## Implemented (iteration 3)
+- Real leadership portraits (user-supplied) at /public/leaders/*.jpg; PDF cover + contents pages (print-only sections); PDF compressed via image re-encoding (~2.4MB, 17 pages, gradients preserved — do NOT use pymupdf.rewrite_images, it drops pattern resources)
+- Enquiry email alerts via Resend (email_service.py, BackgroundTask). Needs RESEND_API_KEY in backend/.env; NOTIFY_EMAIL=bloomygraphics@gmail.com, SENDER_EMAIL=onboarding@resend.dev. Skips gracefully when key absent.
+
 ## Backlog
 - P1: Real photography/logos swap; real client logos in trust bar; LinkedIn/Instagram URLs
 - P1: Server-side PDF generation (Playwright/WeasyPrint) for a downloadable file instead of browser print dialog

@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException, Request
+from fastapi import FastAPI, APIRouter, HTTPException, Request, BackgroundTasks
 from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
@@ -15,6 +15,7 @@ ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 from pdf_service import render_catalogue_pdf  # noqa: E402
+from email_service import send_enquiry_alert  # noqa: E402
 
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
@@ -71,10 +72,11 @@ async def root():
 
 
 @api_router.post("/enquiries", response_model=Enquiry, status_code=201, response_model_by_alias=False)
-async def create_enquiry(payload: EnquiryCreate):
+async def create_enquiry(payload: EnquiryCreate, background: BackgroundTasks):
     enquiry = Enquiry(**payload.model_dump())
     result = await db.enquiries.insert_one(enquiry.to_mongo())
     enquiry.id = str(result.inserted_id)
+    background.add_task(send_enquiry_alert, enquiry.model_dump())
     return enquiry
 
 

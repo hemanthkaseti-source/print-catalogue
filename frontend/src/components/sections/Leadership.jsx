@@ -12,7 +12,7 @@ export const Leadership = () => (
         {LEADERS.map((l, i) => (
           <Reveal key={l.name} delay={i * 0.12} className="grid grid-cols-1 sm:grid-cols-12 gap-6" data-testid={`leader-card-${i + 1}`}>
             <div className="sm:col-span-5 relative overflow-hidden aspect-[3/4]">
-              <motion.img src={l.img} alt={`${l.name}, ${l.role}`} className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.05]" initial={{ scale: 1.15 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.8, ease: EASE }} />
+              <motion.img src={l.img} alt={`${l.name}, ${l.role}`} className="absolute inset-0 w-full h-full object-cover object-top grayscale-[0.85] contrast-[1.05]" initial={{ scale: 1.15 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.8, ease: EASE }} />
             </div>
             <div className="sm:col-span-7 flex flex-col justify-between gap-8">
               <blockquote className="quote text-2xl md:text-3xl lg:text-4xl">“{l.quote}”</blockquote>

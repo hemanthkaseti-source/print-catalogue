@@ -17,6 +17,7 @@ import { Exports } from './components/sections/Exports';
 import { Consultation } from './components/sections/Consultation';
 import { Leadership, TrustBar } from './components/sections/Leadership';
 import { CTA, Footer } from './components/sections/CTAFooter';
+import { PrintCover, PrintContents } from './components/sections/PrintPages';
 
 function App() {
   useLenis();
@@ -25,6 +26,8 @@ function App() {
       <Cursor />
       <Nav />
       <main>
+        <PrintCover />
+        <PrintContents />
         <Hero />
         <RebrandBar />
         <Outcomes />

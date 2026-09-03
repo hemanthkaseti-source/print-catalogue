@@ -1,7 +1,10 @@
 import asyncio
+import io
 import os
 import time
 from pathlib import Path
+import pymupdf
+from PIL import Image
 from playwright.async_api import async_playwright
 
 PDF_PATH = Path(os.environ.get("PDF_CACHE_PATH", "/tmp/sbg-catalogue.pdf"))
@@ -51,5 +54,30 @@ async def render_catalogue_pdf(url: str, force: bool = False) -> Path:
                 margin={"top": "0", "right": "0", "bottom": "0", "left": "0"},
             )
             await browser.close()
+        compress_pdf(tmp)
         tmp.replace(PDF_PATH)
         return PDF_PATH
+
+
+def compress_pdf(path: Path, max_width: int = 1100, quality: int = 72) -> None:
+    doc = pymupdf.open(str(path))
+    seen = set()
+    for page in doc:
+        for info in page.get_images(full=True):
+            xref = info[0]
+            if xref in seen:
+                continue
+            seen.add(xref)
+            base = doc.extract_image(xref)
+            if not base or base.get("ext") not in ("jpeg", "jpg", "png", "jpx"):
+                continue
+            im = Image.open(io.BytesIO(base["image"])).convert("RGB")
+            if im.width > max_width:
+                im = im.resize((max_width, int(im.height * max_width / im.width)), Image.LANCZOS)
+            buf = io.BytesIO()
+            im.save(buf, "JPEG", quality=quality, optimize=True, progressive=True)
+            page.replace_image(xref, stream=buf.getvalue())
+    out = path.with_suffix(".min.pdf")
+    doc.save(str(out), garbage=3, deflate=True)
+    doc.close()
+    out.replace(path)
