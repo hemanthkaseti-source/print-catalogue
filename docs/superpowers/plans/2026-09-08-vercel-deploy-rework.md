@@ -90,7 +90,7 @@ Add to `"scripts"` (alongside the existing `start`/`build`/`test`):
 
 ```json
     "generate-pdf": "node scripts/generate-pdf.js",
-    "vercel-build": "craco build && npm run generate-pdf"
+    "vercel-build": "craco build && yarn generate-pdf"
 ```
 
 - [ ] **Step 2: Install and lock dependencies**
