@@ -1,3 +1,4 @@
 {
-  "rootDirectory": "frontend"
+  "rootDirectory": "frontend",
+  "buildCommand": "yarn vercel-build"
 }
