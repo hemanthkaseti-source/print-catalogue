@@ -23,7 +23,7 @@ export const Consultation = () => {
       setForm(EMPTY);
       toast.success('Enquiry received. We will reply within one working day.');
     } catch (err) {
-      toast.error(err?.response?.data?.detail?.[0]?.msg || 'Could not send enquiry. Please email us directly.');
+      toast.error(err?.response?.data?.errors?.[0]?.message || 'Could not send enquiry. Please email us directly.');
     } finally { setBusy(false); }
   };
 
